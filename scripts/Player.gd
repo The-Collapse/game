@@ -1,6 +1,5 @@
-extends CharacterBody2D
+extends Entity
 
-@export var speed = 300
 var target = position
 
 func _input(event):
@@ -8,7 +7,9 @@ func _input(event):
 		target = get_global_mouse_position()
 
 func _physics_process(delta):
+	var player := $"."
 	velocity = position.direction_to(target) * speed
-	# look_at(target)
+	look_at(get_global_mouse_position())
+	player.rotation += 190
 	if position.distance_to(target) > 10:
 		move_and_slide()

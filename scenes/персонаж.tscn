@@ -1,16 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://memsp8qv8dv6"]
+[gd_scene load_steps=3 format=3 uid="uid://memsp8qv8dv6"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_8cpr7"]
-[ext_resource type="Texture2D" uid="uid://dchp8fqed0bu6" path="res://assets/Textures/Player/character.png" id="1_m7snx"]
+[ext_resource type="Texture2D" uid="uid://ddrxofgj5rwh4" path="res://assets/Textures/Player/player.png" id="2_x2hgr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vhsui"]
-radius = 16.0
-
-[node name="Персонаж" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8cpr7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vhsui")
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_x2hgr")
 
-[node name="Character" type="Sprite2D" parent="CollisionShape2D"]
-texture = ExtResource("1_m7snx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, 2, -16, -2, -11, -5, -6, -5, -2, -9, 3, -9, 7, -5, 11, -5, 16, -2, 16, 2, 11, 5, 6, 5, 4, 7, -3, 7, -5, 5, -11, 5)
